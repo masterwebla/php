@@ -13,6 +13,8 @@
 		$sql_insertar = "INSERT INTO usuarios (nombres,email,edad,ciudad) 
 			VALUES ('$nombres','$email','$edad','$ciudad')";
 		$conn->exec($sql_insertar);
+
+		//$conn->close();
 		header("location:listar.php");
 	} else {
 		header("location:registro.php");

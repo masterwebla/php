@@ -5,13 +5,14 @@
 	//PASO 2: INSTRUCCIÓN SQL PARA CONSULTAR
 	$sql_consultar = "SELECT * FROM usuarios ORDER BY nombres";
 	$resultado = $conn->query($sql_consultar);
+	//$conn->close();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Listar Usuarios</title>
-	<meta charset="utf-8">
+	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
