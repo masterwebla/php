@@ -3,7 +3,7 @@
 	include("conexion.php");
 
 	//PASO 2: INSTRUCCIÓN SQL PARA CONSULTAR
-	$sql_consultar = "SELECT * FROM usuarios";
+	$sql_consultar = "SELECT * FROM usuarios ORDER BY nombres";
 	$resultado = $conn->query($sql_consultar);
 ?>
 
@@ -25,6 +25,7 @@
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nombres</th>
 					<th>Email</th>
 					<th>Edad</th>
@@ -35,12 +36,13 @@
 			<tbody>
 				<?php while($fila = $resultado->fetch(PDO::FETCH_ASSOC)){ ?>
 					<tr>
+						<td><?php echo $fila['id']; ?></td>
 						<td><?php echo $fila['nombres']; ?></td>
 						<td><?php echo $fila['email']; ?></td>
 						<td><?php echo $fila['edad']; ?></td>
 						<td><?php echo $fila['ciudad']; ?></td>
 						<td>
-							<a class="btn btn-info" href="#"><i class="fas fa-edit"></i></a>
+							<a class="btn btn-info" href="editar.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-edit"></i></a>
 							<a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
 						</td>
 					</tr>

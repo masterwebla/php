@@ -13,7 +13,7 @@
 		$sql_insertar = "INSERT INTO usuarios (nombres,email,edad,ciudad) 
 			VALUES ('$nombres','$email','$edad','$ciudad')";
 		$conn->exec($sql_insertar);
-		header("location:gracias.php");
+		header("location:listar.php");
 	} else {
 		header("location:registro.php");
 	}
