@@ -1,3 +1,11 @@
+<?php 
+	//PASO 1: Conectarnos a la BD
+	include('conexion.php');
+
+	//PASO 2: Consultar la tabla ciudades
+	$sql_consulta = "SELECT * FROM ciudades";
+	$resultado = $conn->query($sql_consulta);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +19,9 @@
 		Edad: <input type="number" name="edad" min="10" max="100"><br>
 		Ciudad: 
 		<select name="ciudad">
-			<option value="Bogota">Bogota</option>
-			<option value="Medellin">Medellin</option>
-			<option value="Cali">Cali</option>
+			<?php while($fila = $resultado->fetch(PDO::FETCH_ASSOC)){ ?>
+				<option value="<?php echo $fila['id']; ?>"><?php echo $fila['nombre'] ?></option>
+			<?php } ?>
 		</select><br>
 		<input type="submit" value="Guardar">
 	</form>
