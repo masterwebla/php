@@ -44,7 +44,7 @@
 						<td><?php echo $fila['ciudad']; ?></td>
 						<td>
 							<a class="btn btn-info" href="editar.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-edit"></i></a>
-							<a class="btn btn-danger" href="#"><i class="fas fa-trash"></i></a>
+							<a class="btn btn-danger" href="eliminar.php?id=<?php echo $fila['id'] ?>"><i class="fas fa-trash"></i></a>
 						</td>
 					</tr>
 				<?php } ?>
