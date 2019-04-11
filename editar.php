@@ -26,7 +26,8 @@
 <body>
 	<div class="container">
 		<h1>Editar usuario <?php echo $fila['nombres']; ?></h1>
-		<form action="guardar.php" method="post">
+		<form action="actualizar.php" method="post">
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
 			<div class="form-group">
 				<label>Nombres:</label>
 				<input type="text" name="nombres" value="<?php echo $fila['nombres']; ?>" required class="form-control">
@@ -42,9 +43,9 @@
 			<div class="form-group">
 				<label>Ciudad</label>
 				<select name="ciudad" class="form-control">
-					<option value="Bogota">Bogota</option>
-					<option value="Medellin">Medellin</option>
-					<option value="Cali">Cali</option>
+					<option <?php if($fila['ciudad']=="Bogota"){ ?> selected <?php } ?> value="Bogota">Bogota</option>
+					<option <?php if($fila['ciudad']=="Medellin"){ ?> selected <?php } ?> value="Medellin">Medellin</option>
+					<option <?php if($fila['ciudad']=="Cali"){ ?> selected <?php } ?> value="Cali">Cali</option>
 				</select>
 			</div>
 			<a class="btn btn-danger" href="listar.php">Cancelar</a>
